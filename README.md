@@ -1,11 +1,14 @@
-Earn Smart Frontend
-Application is written in NextJS to connect to a Golang backend located here.
+> ⚠️ **WARNING:** This repository is currently under active development and not ready for public use. It has been pushed for code management purposes only. If you want to look at the code that's fine, but please don't use it.
 
-The intent is to provide a trading and investment solution for CryptoCurrency assets on a variety of chains and protocols. The goal is a “blank slate”, largely devoid of pre-defined complex business rules or third party providers.
+# Earn Smart Frontend
+
+Application is written in NextJS to connect to a Golang backend located [here](https://github.com/smallbatch-apps/earnsmart-api).
+
+The intent is to provide a trading and investment solution for CryptoCurrency assets on a variety of chains and protocols. The goal is a “blank slate”, largely devoid of pre-defined complex business rules or third party providers. This could later be extended with additional features and providers to serve as a platform for a wide variety of financial services.
 
 ## Installation and Setup
 
-Installation is standard for any node application.
+Installation is standard for any Node application.
 
 ```
 git clone
@@ -16,7 +19,7 @@ npm run dev
 Note that for the application to work you will need to create a `.env` file in the root directory with the following:
 
 ```
-NEXT_PUBLIC_API_URL=http://localhost:8080
+NEXT_PUBLIC_API_HOST=http://localhost:8090
 ```
 
 The specific features and omissions are documented in more detail in the backend readme but the keys are:
