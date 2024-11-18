@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Earn Smart Frontend
+Application is written in NextJS to connect to a Golang backend located here.
 
-## Getting Started
+The intent is to provide a trading and investment solution for CryptoCurrency assets on a variety of chains and protocols. The goal is a “blank slate”, largely devoid of pre-defined complex business rules or third party providers.
 
-First, run the development server:
+## Installation and Setup
 
-```bash
+Installation is standard for any node application.
+
+```
+git clone
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Note that for the application to work you will need to create a `.env` file in the root directory with the following:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+NEXT_PUBLIC_API_URL=http://localhost:8080
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The specific features and omissions are documented in more detail in the backend readme but the keys are:
 
-## Learn More
+1. No fees are taken from any transactions
+2. There is no blockchain connection, such as a “hot wallet” or FireBlocks integration. Transactions are internal and database-only
+3. Historical graphs are mocked - this is because transactions cannot be made with fake dates, making it impossible to generate history.
+4. Swaps in particular simply exchange one currency for another at the same current USD rate - there is no RFQ provider or fee processing
+5. Relatively little time has been spent on optional authentication such as social login, passkeys, or 2FA support.
+6. No KYC or AML are present, though visible as an example in the UI.
+7. There is no unit testing present
+8. User “niceties” such as extensive settings like dark mode and optional currencies are not supported.
+9. Only English is currently supported and text is hard-coded rather than implemented as translation keys
 
-To learn more about Next.js, take a look at the following resources:
+These have all been omitted for one of two reasons. They are either time-consuming for features that may or not be required, or they require external services and contracts. Or in a few cases - both.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technical details
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Application is written in NextJS with Zustand for global storage, React Hook Form, ShadCN UI for components. Fonts are from Google Fonts and icons limited to free tier from FontAwesome. Zustand contains all data and data access patterns and acts as a cache that can be refreshed using several methods.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Please read the [backend application ReadMe](https://github.com/smallbatch-apps/earnsmart-api) for more detailed information on the full stack, technical decisions, and more interesting technology choices and implications.
