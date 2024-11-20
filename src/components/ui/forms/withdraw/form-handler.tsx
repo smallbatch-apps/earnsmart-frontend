@@ -44,8 +44,6 @@ export default function WithdrawForm({
   showContent = true,
   clickFn = () => {},
 }: Props) {
-  console.log("withdraw form");
-  console.log(clickFn);
   const [transaction, setTransaction] = useState<Transaction | null>(null);
   const { fetchBalances, balances } = useBalances();
   const { fetchActivities } = useActivities();

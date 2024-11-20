@@ -18,6 +18,8 @@ import type {
   Asset,
 } from "@/types";
 
+import BigNumber from "bignumber.js";
+
 import Amount from "@/utils/Amount";
 import { allCurrencies, transactionTypeStrings } from "@/types";
 
@@ -96,7 +98,9 @@ export const parseTransactions = (
     address: transaction.address ?? "",
     code: transaction.code,
     transactionType: transactionTypeStrings[transaction.code],
-    timestamp: new Date(transaction.timestamp),
+    timestamp: new Date(
+      Number(BigInt(transaction.timestamp) / BigInt(1000000))
+    ),
     debitAccountId: transaction.debit_account_id,
     creditAccountId: transaction.credit_account_id,
   }));

@@ -34,8 +34,8 @@ export function LoginForm() {
     formState: { errors },
   } = useForm<FormFields>({
     defaultValues: {
-      email: "",
-      password: "",
+      email: "test@earnsmart.com",
+      password: "admin123456",
     },
   });
 

@@ -40,9 +40,6 @@ export default function DepositForm({
   showContent = true,
   clickFn = () => {},
 }: Props) {
-  console.log("deposit form");
-  console.log(clickFn);
-  console.log("show content", showContent);
   const [transaction, setTransaction] = useState<Transaction | null>(null);
   const methods = useForm<FormFields>({
     defaultValues: {

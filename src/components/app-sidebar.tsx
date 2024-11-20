@@ -20,29 +20,29 @@ const data = {
   navMain: [
     {
       title: "Quicklinks",
-      url: "#",
+      url: "/dashboard",
       items: [
         {
           title: "Dashboard",
-          url: "#",
+          url: "/dashboard",
         },
       ],
     },
     {
       title: "Transactions",
-      url: "#",
+      url: "/transactions",
       items: [
         {
           title: "Withdraw",
-          url: "#",
+          url: "/transactions",
         },
         {
           title: "Deposit",
-          url: "#",
+          url: "/transactions",
         },
         {
           title: "Swap",
-          url: "#",
+          url: "/swaps",
         },
       ],
     },

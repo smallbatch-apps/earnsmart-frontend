@@ -22,28 +22,28 @@ function KycItem({
   status = "pending",
   isFinal = false,
 }: KycItemProps) {
-  const statusClass = cn(
-    "border font-semibold border-2 rounded-full px-4 py-1",
-    {
-      "text-green-600 border-green-200 bg-green-50": status === "done",
-      "text-orange-600 border-orange-200 bg-orange-50":
-        status === "in-progress",
-      "text-gray-500 border-gray-200 bg-gray-50": status === "pending",
-    }
-  );
+  const statusClass = cn("border border-2 rounded-full px-4 py-1", {
+    "text-green-600 border-green-200 bg-green-50": status === "done",
+    "text-orange-600 border-orange-200 bg-orange-50": status === "in-progress",
+    "text-gray-500 border-gray-200 bg-gray-50 opacity-30": status === "pending",
+  });
+  const boxClass = cn("flex items-center justify-center", {
+    "opacity-30": status === "pending",
+  });
+
+  const dotsClass = cn("text-gray-400 justify-self-center", {
+    "opacity-30": status === "pending",
+  });
 
   return (
     <>
-      <div className="flex items-center justify-center">
+      <div className={boxClass}>
         <FontAwesomeIcon icon={icon} />
       </div>
       <div className={statusClass}>{text}</div>
       {!isFinal && (
         <>
-          <FontAwesomeIcon
-            icon={faEllipsisVertical}
-            className="text-gray-400 justify-self-center"
-          />
+          <FontAwesomeIcon icon={faEllipsisVertical} className={dotsClass} />
           <div></div>
         </>
       )}

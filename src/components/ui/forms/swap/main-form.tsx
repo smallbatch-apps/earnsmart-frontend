@@ -21,14 +21,9 @@ export default function MainForm() {
   const { balances } = useBalances();
 
   useEffect(() => {
-    console.log(from_amount, from_currency, to_currency);
-    // setToAmount()
     if (!from_amount) {
       setToAmount(new Amount("0", allCurrencies[to_currency]));
     }
-    // if (from_amount) {
-    // setValue("to_amount", from_amount * watch("rate"));
-    // }
   }, [from_amount, from_currency, to_currency]);
   return (
     <>
